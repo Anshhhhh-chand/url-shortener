@@ -1,0 +1,227 @@
+/************************************
+  Modern Responsive App Styles
+************************************/
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f7f8fa;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7f8fa;
+}
+
+.dark .app-container {
+  background: #232946;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem 1rem 1rem;
+  background: transparent;
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  margin: 1.5rem auto 0 auto;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: #2d3748;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+input[type="url"], input[type="text"] {
+  padding: 0.8rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  width: 100%;
+  margin-bottom: 1rem;
+  background: #f1f5f9;
+  color: #22223b;
+}
+.dark input[type="url"], .dark input[type="text"] {
+  background: #232946;
+  color: #f4f4f4;
+  border-color: #393e46;
+}
+.dark input[type="url"]::placeholder, .dark input[type="text"]::placeholder {
+  color: #b8c1ec;
+  opacity: 1;
+}
+
+button, .btn {
+  padding: 0.8rem 1.2rem;
+  background: linear-gradient(90deg, #6366f1 60%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  margin-top: 0.5rem;
+}
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.2rem 0 0.5rem 0;
+  justify-content: center;
+}
+.result input[type="text"] {
+  width: 70%;
+  font-size: 1rem;
+}
+.result button {
+  padding: 0.7rem 1.1rem;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.result button:active {
+  background: #4f46e5;
+}
+
+.error {
+  color: #e53e3e;
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+}
+
+footer {
+  background: #22223b;
+  color: #fff;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  margin-top: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.dark footer {
+  background: #232946;
+  color: #f4f4f4;
+}
+
+footer .footer-links {
+  margin: 1rem 0 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+footer .footer-links a {
+  color: #a0aec0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+footer .footer-links a:hover {
+  color: #60a5fa;
+}
+footer .footer-brand {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .card, main {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+  .result input[type="text"] {
+    width: 60%;
+    font-size: 0.95rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  footer {
+    font-size: 1rem;
+    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in {
+  animation: fade-in 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+
+.main-bg {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: url('/adrien-olichon-RCAhiGJsUUE-unsplash.jpg') center center / cover no-repeat fixed;
+  z-index: 0;
+}
+
+.main-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 34, 34, 0.25);
+  z-index: 1;
+}
+
+.main-bg > * {
+  position: relative;
+  z-index: 2;
+}
+footer {
+  margin-top: 0 !important;
+}
+
+.card {
+  margin-bottom: 0 !important;
+}
+
+main {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+body {
+  overflow-x: hidden;
+}
