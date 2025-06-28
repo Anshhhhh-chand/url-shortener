@@ -17,7 +17,9 @@ export default function Home() {
     }
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8001/api/url/shorten", {
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:8001";
+const res = await fetch(`${API_BASE}/api/url/shorten`, {
+
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ originalUrl: url }),
